@@ -23,6 +23,35 @@ const words = [
   { text: "Family" },
 ];
 
+const Marquee: React.FC = () => (
+  <div className="bg-transparent py-2">
+    <div className="whitespace-nowrap flex animate-scroll text-white font-bold text-lg">
+    <a
+    href="https://prody.istenith.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mx-4 underline hover:text-blue-300 transition-colors duration-300"
+  >
+    Prodyogiki '25 Coming Soon
+  </a>
+
+    </div>
+    <style jsx>{`
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .animate-scroll {
+        animation: scroll 15s linear infinite;
+      }
+    `}</style>
+  </div>
+);
+
 export default function ShootingStarsAndStarsBackgroundDemo() {
   const [loading, setLoading] = useState(true);
 
@@ -40,6 +69,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
 
   return (
     <>
+      <Marquee />
       <div className="min-h-screen relative w-full bg-[#171616] flex flex-col items-center justify-center overflow-hidden rounded-md">
         <div className="w-full absolute inset-0 h-screen">
           <SparklesCore
